@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>📱 Ponto Eletrônico - Guia de Instalação</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            padding: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 10px;
+        }
+        
+        h1 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        .developer {
+            color: #999;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        
+        .card {
+            background: #f8f9fa;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .step-text {
+            flex: 1;
+            font-size: 1rem;
+            color: #333;
+        }
+        
+        .platform-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 5px 5px 0 0;
+        }
+        
+        .ios {
+            background: #000;
+            color: white;
+        }
+        
+        .android {
+            background: #3ddc84;
+            color: #000;
+        }
+        
+        .qr-code {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 20px;
+        }
+        
+        .qr-placeholder {
+            width: 200px;
+            height: 200px;
+            background: #f0f0f0;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            font-size: 3rem;
+            border: 2px dashed #667eea;
+        }
+        
+        .link-box {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            word-break: break-all;
+            margin: 15px 0;
+        }
+        
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin: 15px 0;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+        }
+        
+        .btn-copy {
+            background: #667eea;
+            margin-top: 10px;
+        }
+        
+        .info-box {
+            background: #e3f2fd;
+            border-radius: 15px;
+            padding: 15px;
+            margin: 15px 0;
+            color: #1976d2;
+        }
+        
+        .warning-box {
+            background: #fff3e0;
+            border-radius: 15px;
+            padding: 15px;
+            margin: 15px 0;
+            color: #f57c00;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #999;
+            font-size: 0.85rem;
+        }
+        
+        .screenshot {
+            background: #f0f0f0;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .screenshot img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        
+        .emoji-large {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">📱</div>
+            <h1>Ponto Eletrônico</h1>
+            <div class="subtitle">Sistema de Registro de Ponto</div>
+            <div class="developer">Desenvolvido por: João Paulo da Silva de Farias</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">
+                <span>📲</span> INSTALAÇÃO NO CELULAR
+            </div>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-text">Abra este link no navegador do seu celular</div>
+            </div>
+            
+            <div class="link-box" id="appLink">
+                https://docs.google.com/spreadsheets/d/SEU_ID_AQUI
+            </div>
+            
+            <button class="btn btn-copy" onclick="copiarLink()">
+                📋 COPIAR LINK
+            </button>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-text">Escolha seu sistema e siga as instruções:</div>
+            </div>
+            
+            <div style="margin: 20px 0;">
+                <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                    <span class="platform-badge ios">📱 iOS (iPhone)</span>
+                    <span class="platform-badge android">🤖 Android</span>
+                </div>
+                
+                <div class="screenshot">
+                    <div class="emoji-large">📸</div>
+                    <p style="margin-top: 10px; color: #666;">Aponte a câmera para o QR Code abaixo</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Instruções iOS -->
+        <div class="card">
+            <div class="card-title">
+                <span>📱</span> iOS (iPhone)
+            </div>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-text">Abra o link no <strong>Safari</strong> (navegador padrão)</div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-text">Toque no ícone <strong>📤 Compartilhar</strong> (na barra inferior)</div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-text">Role a tela e toque em <strong>"Adicionar à Tela de Início"</strong></div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-text">Toque em <strong>"Adicionar"</strong> no canto superior direito</div>
+            </div>
+            
+            <div class="info-box">
+                ✅ Pronto! O aplicativo aparecerá na tela inicial como um app nativo.
+            </div>
+        </div>
+        
+        <!-- Instruções Android -->
+        <div class="card">
+            <div class="card-title">
+                <span>🤖</span> Android
+            </div>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-text">Abra o link no <strong>Chrome</strong></div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-text">Toque no menu <strong>⋮ (3 pontinhos)</strong></div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-text">Selecione <strong>"Adicionar à tela inicial"</strong></div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-text">Toque em <strong>"Adicionar"</strong> e depois em <strong>"Instalar"</strong></div>
+            </div>
+            
+            <div class="info-box">
+                ✅ Pronto! O aplicativo será instalado como um app normal.
+            </div>
+        </div>
+        
+        <!-- Como Usar -->
+        <div class="card">
+            <div class="card-title">
+                <span>🎯</span> COMO USAR
+            </div>
+            
+            <div class="step">
+                <div class="step-number">📸</div>
+                <div class="step-text">
+                    <strong>Bater Ponto:</strong> Abra o app e clique no botão verde "BATER PONTO". A câmera abrirá automaticamente. Posicione o rosto no círculo e pronto!
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">👥</div>
+                <div class="step-text">
+                    <strong>Primeiro Acesso:</strong> Se for seu primeiro acesso, digite sua matrícula para cadastrar sua biometria facial.
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">📝</div>
+                <div class="step-text">
+                    <strong>Registro Manual:</strong> Caso a câmera não funcione, use a opção "Registro Manual" no menu.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Informações Importantes -->
+        <div class="warning-box">
+            <strong>⚠️ IMPORTANTE:</strong>
+            <ul style="margin-top: 10px; margin-left: 20px;">
+                <li>Permita o acesso à câmera quando solicitado</li>
+                <li>Use em local bem iluminado para melhor reconhecimento</li>
+                <li>Mantenha-se conectado à internet</li>
+                <li>Cadastre sua biometria apenas uma vez</li>
+                <li>Em caso de problemas, use o registro manual</li>
+            </ul>
+        </div>
+        
+        <!-- Credenciais de Acesso (apenas para TI) -->
+        <div class="card" style="background: #f0f0f0;">
+            <div class="card-title">
+                <span>👨‍💻</span> ÁREA RESTRITA (T.I)
+            </div>
+            
+            <div class="step">
+                <div class="step-number">🔐</div>
+                <div class="step-text">
+                    <strong>Acesso ao Painel T.I:</strong><br>
+                    Usuário: <code>admin</code><br>
+                    Senha: <code>ti@2024</code>
+                </div>
+            </div>
+            
+            <div class="info-box" style="background: #e8f5e9; color: #2e7d32;">
+                No painel T.I você pode gerar folhas de ponto mensais e gerenciar usuários.
+            </div>
+        </div>
+        
+        <!-- Suporte -->
+        <div class="card">
+            <div class="card-title">
+                <span>🆘</span> SUPORTE
+            </div>
+            
+            <div class="step">
+                <div class="step-number">📞</div>
+                <div class="step-text">
+                    <strong>Em caso de problemas:</strong><br>
+                    Entre em contato com o responsável pelo sistema.
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">📧</div>
+                <div class="step-text">
+                    <strong>E-mail:</strong> suporte@pontoeletronico.com
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2024 - Sistema de Ponto Eletrônico</p>
+            <p>Desenvolvido por João Paulo da Silva de Farias</p>
+            <p style="margin-top: 10px;">Versão 2.0 - Compatível com iOS e Android</p>
+        </div>
+    </div>
+    
+    <script>
+        function copiarLink() {
+            const link = document.getElementById('appLink').innerText;
+            navigator.clipboard.writeText(link).then(function() {
+                alert('✅ Link copiado! Agora cole no navegador do seu celular.');
+            }).catch(function() {
+                alert('❌ Erro ao copiar. Selecione o link manualmente.');
+            });
+        }
+        
+        // Detectar sistema operacional
+        function detectarSO() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                document.querySelector('.ios').style.backgroundColor = '#000';
+                document.querySelector('.ios').style.color = 'white';
+            } else if (/android/i.test(userAgent)) {
+                document.querySelector('.android').style.backgroundColor = '#3ddc84';
+            }
+        }
+        
+        window.onload = detectarSO;
+    </script>
+</body>
+</html>
